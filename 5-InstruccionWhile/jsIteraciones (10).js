@@ -1,9 +1,17 @@
 function mostrar()
 {
-
+    //declarar contadores y variables 
 	var contador=0;
-	//declarar contadores y variables 
-	
+	var acumuladorNegativos = 0;
+	var contadorNegativos = 0;
+	var acumuladorPositivos = 0;
+	var contadorPositivos = 0;
+	var contadorCeros;
+	var promedioPositivos;
+	var promedioNegativos;
+	var diferenciaEntrePositivosYNegativos
+	var acumulador
+
 	var respuesta="si";
 
 	while(respuesta!="no")

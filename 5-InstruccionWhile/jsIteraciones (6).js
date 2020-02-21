@@ -1,27 +1,25 @@
 function mostrar()
 {
-
 	var contador=0;
 	var acumulador=0;
+	var numero;
 
-document.getElementById('suma').value=acumulador;
-document.getElementById('promedio').value=acumulador/5;
+	while(contador < 5){
+		contador++;
+		numero = prompt("Ingrese un numero");
 
-while (contador <5){           //esto se ejecuta 5 veces
-	contador++;
-	var numero = prompt("Ingrese un numero");
-
-	//validar
-	numero = parseInt(numero);
-
-	while(isNaN(numero)){      //si numero es NaN lo que voy a pedir un numero valido 
-		numero = prompt("Ingrese un numero valido");
+		//validamos
 		numero = parseInt(numero);
+
+		while(isNaN(numero)) {
+			numero=prompt("Ingrese un numero valido");
+			numero=parseInt(numero);
 		}
-
-         acumulador += numero;   //acumulamos
-
-	
-}
+		//acumulamos
+		acumulador += numero;
+		console.log(acumulador);
+	}
+document.getElementById('suma').value=acumulador;
+document.getElementById('promedio').value=acumulador/5; 
 
 }//FIN DE LA FUNCIÓN
