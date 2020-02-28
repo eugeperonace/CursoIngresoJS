@@ -1,11 +1,13 @@
 function mostrar()
 {
-//tomo la edad  
+    //tomo la edad  
     var edad;
+
+    //Ingreso de datos por Id
     edad = document.getElementById("edad").value;
 
-    if (edad > 13 && edad < 18) {
-        //  De 14 a infinito 
+    //Operacion IF
+    if (edad >= 13 && edad < 18) {
             alert("Es adolescente");
     }
 

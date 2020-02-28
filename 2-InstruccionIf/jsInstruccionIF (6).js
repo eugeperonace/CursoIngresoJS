@@ -1,19 +1,21 @@
 function mostrar()
 {
-//tomo la edad  
+    //tomo la edad  
     var edad;
+
+    //Ingreso de datos por Id
     edad = document.getElementById("edad").value;
+
+    //Operacion IF
 
     if (edad >17){
         alert("Es mayor de edad");
 
-    } else {
-        // de 17 a -infinito
-        if (edad > 13){
+        }else{
+            if (edad > 13){
             alert("Es adolescente");
-
-        } else {
-            alert("Es menor de edad");        
+            }else{
+                alert("Es menor de edad");        
         }
     }
 

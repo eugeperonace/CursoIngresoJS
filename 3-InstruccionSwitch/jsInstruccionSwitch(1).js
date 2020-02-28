@@ -1,10 +1,10 @@
 function mostrar()
 {
 //tomo la edad  
-var mesDelAño = document.getElementById('mes').value;
+var mesDelAño;
+mesDelAño = document.getElementById('mes').value;
 
-    switch(mesDelAño)
-    {
+    switch(mesDelAño){
         case "Enero":
             alert("Que comiences bien el año");
             break;
@@ -20,8 +20,6 @@ var mesDelAño = document.getElementById('mes').value;
         default:
             alert("No hay un evento reconocido en este mes del año")
             break;
-
     }
 
-    
 }//FIN DE LA FUNCIÓN
