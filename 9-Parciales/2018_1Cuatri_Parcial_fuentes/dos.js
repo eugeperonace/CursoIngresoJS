@@ -30,6 +30,7 @@ d) el promedi de precio por kilo en total
     var tipoAlimentoMasCaro;
     var acumPrecioDeCadaUno = 0;
     var contadorPrecios = 0;
+    var descuento = 0;
 
     while(respuesta){
     
@@ -61,11 +62,11 @@ d) el promedi de precio por kilo en total
 
     //b) el importe total a pagar con descuento (si corresponde)
 
-    if ( peso > 100){
+    if ( peso >= 300){
      precioConDescuento = 85*precioTotal /100;
 
 	}else{
-        if ( peso > 300){
+        if ( peso > 100 && peso <=299){
         precioConDescuento = 75*precioTotal /100; 
 		}
 	}
