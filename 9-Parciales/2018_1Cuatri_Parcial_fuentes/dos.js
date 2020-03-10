@@ -49,7 +49,7 @@ d) el promedi de precio por kilo en total
     do{
         tipo = prompt("INGRESE TIPO v, a, m ");
 
-	}while (!isNaN(tipo) || tipo != "v" && tipo != "a" && tipo != "m");
+	}while (tipo != "v" && tipo != "a" && tipo != "m");
 
 
     //a) el importe total a pagar, bruto sin descuento
@@ -62,12 +62,12 @@ d) el promedi de precio por kilo en total
 
     //b) el importe total a pagar con descuento (si corresponde)
 
-    if ( peso >= 300){
-     precioConDescuento = 85*precioTotal /100;
+    if ( acumPeso >= 300){
+     precioConDescuento = 75*precioTotal /100;
 
 	}else{
-        if ( peso > 100 && peso <=299){
-        precioConDescuento = 75*precioTotal /100; 
+        if ( acumPeso > 100 && peso <=299){
+        precioConDescuento = 85*precioTotal /100; 
 		}
 	}
 

@@ -15,12 +15,13 @@ e) El promedio de edad entre los hombres solteros
 	var sexo;
 	var estadoCivil;
 	var respuesta = true;
-	var primeraVez = true;
-	var edadCasadoMasJoven;
+	var edadCasadoMasJoven = 1000;
 	var nombreCasadoMasJoven;
-	var edadMasViejo;
+	var edadMasViejo = 18;
 	var nombreMasViejo;
 	var sexoMasViejo;
+	var contadorCasadas = 0;
+	var contadorViudas = 0;
 	var contadorMujeres = 0;
 	var acumuladorEdadMujeres = 0;
 	var acumuladorEdadHombresSolteros = 0;
@@ -44,24 +45,24 @@ e) El promedio de edad entre los hombres solteros
 	do{
 		sexo = prompt("INGRESE SU SEXO");
 
-	}while (!isNaN(sexo) || sexo != "f" && sexo != "m");
+	}while (sexo != "f" && sexo != "m");
 
 	do{
 		estadoCivil = prompt("INGRESE SU ESTADO CIVIL (soltero, casado, viudo)");
 
-	}while (!isNaN(estadoCivil) || estadoCivil != "soltero" && estadoCivil != "casado" && estadoCivil != "viudo");
+	}while (estadoCivil != "soltero" && estadoCivil != "casado" && estadoCivil != "viudo");
 
 
 	//a) El nombre del hombre casado mas joven
 
-	if (sexo == "m" && primeraVez || estadoCivil == "casado" || edad > edadCasadoMasJoven){
+	if (sexo == "m" && estadoCivil == "casado" && edad < edadCasadoMasJoven){
 		nombreCasadoMasJoven = nombre;
 		edadCasadoMasJoven = edad;
 	}
 
 	//b) El sexo y nombre del pasajero más viejo
 
-	if (primeraVez || edad > edadMasViejo){
+	if (edad > edadMasViejo){
 		edadMasViejo = edad;
 		nombreMasViejo = nombre;
 		sexoMasViejo = sexo;
@@ -69,8 +70,16 @@ e) El promedio de edad entre los hombres solteros
 
 	//c) La cantidad de mujeres que hay casadas o viudas
 
-	if (sexo == "m" && primeraVez|| estadoCivil == "casado" || estadoCivil == "viudo" ){
-		contadorMujeres++;
+	if (sexo == "f"){
+		
+		if (estadoCivil == "casado"){
+			contadorCasadas++;
+
+		}else{
+		
+		}if (estadoCivil == "viudo"){
+			contadorViudas++;
+		}
 	}
 
 	//d) El promedio de edad entre las mujeres
@@ -82,14 +91,12 @@ e) El promedio de edad entre los hombres solteros
 	//e) El promedio de edad entre los hombres solteros
 
 	}else{
-		if (sexo == "m" || estadoCivil == "soltero"){
+		if (sexo == "m" && estadoCivil == "soltero"){
 			acumuladorEdadHombresSolteros += edad;
 			contadorHombresSolteros++;
 		}
 	}
 	
-	//Continuar
-	primeraVez = false;
 	respuesta = confirm("Desea seguir ingresando datos?");
 
 
@@ -102,7 +109,7 @@ e) El promedio de edad entre los hombres solteros
 
 	document.write ("El nombre del hombre casado mas joven es: " +nombreCasadoMasJoven+ "<br>" );
 	document.write ("El sexo del pasajero mas viejo es: " +sexoMasViejo+ " y su nombre es: " +nombreMasViejo+ "<br>" );
-	document.write ("La cantidad de mujeres casadas o viudas es de: " +contadorMujeres+ "<br>");
+	document.write ("La cantidad de mujeres casadas es de: " +contadorCasadas+ " y la cantidad de mujeres viudad es de: " +contadorViudas+ "<br>");
 	document.write ("El promedio de edad entre las mujeres es de: " +promedioEdadMujeres+ "<br>");
 	document.write ("El promedio de edad entre los hombres solteros es de: " +promedioEdadHombresSolteros+ "<br>");
 
